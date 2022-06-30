@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9999ff;
+}
+
+.calcContainer {
+  width: 350px;
+  height: fit-content;
+  background-color: #4b4b4b;
+  padding: 14px;
+  border-radius: 18px;
+  box-shadow: 5px 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.calcGrid {
+  display: grid;
+  height: 456px;
+  width: 100%;
+  grid-gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "display display display display"
+    "AC AC divide multiply"
+    "seven eight nine minus"
+    "four five six plus"
+    "one two three equals"
+    "zero zero dot equals";
+}
+
+.calcBtn {
+  border-radius: 12px;
+  border: none;
+  background: radial-gradient(circle at center, #3e3e3e, #4b4b4b);
+  color: #fff;
+  box-shadow: 5px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease-in-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btnRed {
+  background: radial-gradient(circle at center, #cf350f, #ee4b2b);
+  font-weight: normal;
+  color: #000;
+}
+
+.btnOrange {
+  background: radial-gradient(circle at center, #cf650f, #ee832b);
+  color: #000;
+}
+
+.btnBlack {
+  background: radial-gradient(circle at center, #1e1e1e, #363636);
+}
+
+.calcBtn:focus {
+  outline: none;
+}
+
+.btnClicked {
+  box-shadow: none;
+  border: rgba(0, 0, 0, 0.5) solid 1px;
+}
+
+.display {
+  grid-area: display;
+  background-color: #bef0a7;
+  box-shadow: 0 0 5px 5px rgba(190, 240, 167, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+#display {
+  min-height: 44px;
+  font-size: 32px;
+}
+
+.formula-output {
+  min-height: 28px;
+  font-size: 20px;
+}
+
+#clear {
+  grid-area: AC;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#equals {
+  grid-area: equals;
+}
