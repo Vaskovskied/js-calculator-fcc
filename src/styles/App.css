@@ -12,9 +12,9 @@ body,
   width: 100%;
 }
 
-#fcc_test_suite_wrapper {
+/* #fcc_test_suite_wrapper {
   display: none;
-}
+} */
 
 .App {
   min-height: 100vh;
@@ -44,11 +44,11 @@ body,
   grid-template-rows: 1fr 60px 60px 60px 60px 60px;
   grid-template-areas:
     "display display display display"
-    "AC AC divide multiply"
+    "AC AC divide mul"
     "seven eight nine minus"
     "four five six plus"
     "one two three equals"
-    "zero zero dot equals";
+    "zero zero decimal equals";
 }
 
 .calcBtn {
@@ -118,14 +118,70 @@ body,
   font-size: 20px;
 }
 
-#clear {
-  grid-area: AC;
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
 }
 
 #zero {
   grid-area: zero;
 }
 
+#clear {
+  grid-area: AC;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#add {
+  grid-area: plus;
+}
+
+#substract {
+  grid-area: minus;
+}
+
+#multiply {
+  grid-area: mul;
+}
+
 #equals {
   grid-area: equals;
+}
+
+#decimal {
+  grid-area: decimal;
 }

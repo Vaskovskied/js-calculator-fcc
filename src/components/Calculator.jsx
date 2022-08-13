@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import CalcBtn from "./CalcBtn";
+import ClearBtn from "./ClearBtn";
+import DotBtn from "./DotBtn";
 import Display from "./Display";
+import { DIGITS_DATA, LIMIT_PHRASE, SIGNS_DATA } from "../static/static";
+import NumberBtn from "./NumberBtn";
+import EqualBtn from "./EqualBtn";
+import SignBtn from "./SignBtn";
 
 export const calculationContext = React.createContext();
 
@@ -8,6 +13,23 @@ export function Calculator() {
   const [displayOutput, setDisplayOutput] = useState("0");
   const [formulaOutput, setFormulaOutput] = useState("");
   const [equalStatus, setEqualStatus] = useState(false);
+
+  const showLimitMessage = () => {
+    const DIGIT_LIMIT = 16;
+    // show limit message on 16 digits
+    // if digit limit was reached returns true
+    // else returns false
+    if (displayOutput === LIMIT_PHRASE) return true;
+    if (displayOutput.length >= DIGIT_LIMIT) {
+      const prevDisplayOutput = displayOutput;
+      setDisplayOutput(LIMIT_PHRASE);
+      setTimeout(() => {
+        setDisplayOutput(prevDisplayOutput);
+      }, 500);
+      return true;
+    }
+    return false;
+  };
 
   return (
     <calculationContext.Provider
@@ -18,40 +40,21 @@ export function Calculator() {
         setFormulaOutput,
         equalStatus,
         setEqualStatus,
+        showLimitMessage,
       }}
     >
       <div className="calcContainer">
         <div className="calcGrid">
           <Display />
-          <CalcBtn className="btnRed" id="clear">
-            AC
-          </CalcBtn>
-          <CalcBtn className="btnBlack" id="divide">
-            /
-          </CalcBtn>
-          <CalcBtn className="btnBlack" id="multiply">
-            *
-          </CalcBtn>
-          <CalcBtn id="seven">7</CalcBtn>
-          <CalcBtn id="eight">8</CalcBtn>
-          <CalcBtn id="nine">9</CalcBtn>
-          <CalcBtn className="btnBlack" id="subtract">
-            -
-          </CalcBtn>
-          <CalcBtn id="four">4</CalcBtn>
-          <CalcBtn id="five">5</CalcBtn>
-          <CalcBtn id="six">6</CalcBtn>
-          <CalcBtn className="btnBlack" id="add">
-            +
-          </CalcBtn>
-          <CalcBtn id="one">1</CalcBtn>
-          <CalcBtn id="two">2</CalcBtn>
-          <CalcBtn id="three">3</CalcBtn>
-          <CalcBtn className="btnOrange" id="equals">
-            =
-          </CalcBtn>
-          <CalcBtn id="zero">0</CalcBtn>
-          <CalcBtn id="decimal">.</CalcBtn>
+          <ClearBtn />
+          {DIGITS_DATA.map((item) => (
+            <NumberBtn id={item.id} num={item.num} key={item.id} />
+          ))}
+          <DotBtn />
+          {SIGNS_DATA.map((item) => {
+            return <SignBtn key={item.id} sign={item.sign} id={item.id} />;
+          })}
+          <EqualBtn />
         </div>
       </div>
     </calculationContext.Provider>

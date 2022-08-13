@@ -1,17 +1,16 @@
 {
   "name": "js-calculator-fcc",
   "version": "0.1.0",
-
   "private": true,
-  "homepage": "https://vaskovskied.github.io/js-calculator-fcc",
+  "homepage": "https://vaskovskied.github.io/js-calculator-fcc/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "gh-pages": "^4.0.0",
     "mathjs": "^10.6.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
   },
