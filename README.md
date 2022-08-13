@@ -2,7 +2,7 @@
 Made for freeCodeCamp's Front End Development Libraries certification
 ### [VIEW AND TEST IT HERE](https://vaskovskied.github.io/js-calculator-fcc/)
 ### Stack:  
-* React.js 18 with hooks
+* React.js with hooks
 * [math.js](https://github.com/josdejong/mathjs)
 > You can see [freeCodeCamps requirements by the link](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator).
 
